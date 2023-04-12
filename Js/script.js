@@ -22,6 +22,15 @@ const renderPokemon = async (pokemon) => {
     pokemonName.innerHTML = 'Loading...';
     pokemonNumber.innerHTML = ''
 
+
+    if(pokemon.length > 1 && pokemon[0] == 0){
+    pokemon = String(pokemon).slice(1)
+
+    
+
+  
+    }
+
     const data = await fetchPokemon(pokemon);
 
     if (data) {
@@ -34,7 +43,7 @@ const renderPokemon = async (pokemon) => {
     input.value ='';
     } else {
         pokemonImage.style.display = 'none';
-        pokemonName.innerHTML = 'Not found :c';
+        pokemonName.innerHTML = 'Não encontrado';
         pokemonNumber.innerHTML = '';
       }
 }   
